@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}实验规划}{2}{section.1}
+\contentsline {section}{\numberline {2}气浮平台}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}供气系统}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}伺服电机}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}利用Elmo控制气浮平台}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}绝对位置的标定}{5}{subsection.2.4}
+\contentsline {section}{\numberline {3}光运输的一些参数}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}基本的运动方程}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}传输时间}{7}{subsection.3.2}
+\contentsline {section}{\numberline {4}初步测试结果}{8}{section.4}

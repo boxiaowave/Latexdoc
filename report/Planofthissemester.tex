@@ -1,0 +1,193 @@
+\documentclass[onecolumn,a4paper,10pt]{article}
+
+\usepackage[ boldfont,slantfont]{xeCJK}  %设定支持中文
+\usepackage{multicol}
+
+\graphicspath{{figures/}}    %设置放置图片的文件夹
+
+\linespread{1.2}     %设置行间距的命令
+
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+\setsansfont{SimHei}
+
+\setCJKfamilyfont{song}{SimSun}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{yao}{FZYaoTi}
+
+\newcommand\song{\CJKfamily{song}}
+\newcommand\kai{\CJKfamily{kai}}
+\newcommand\hei{\CJKfamily{hei}}
+\newcommand\yao{\CJKfamily{yao}}
+
+\newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
+
+%%%段落首行缩进两个字
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}%中文缩进两个汉字位
+
+%%%%%%%%%% 定理类环境的定义 %%%%%%%%%%
+%% 必须在导入中文环境之后
+\newtheorem{example}{例}             % 整体编号
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}[section]  % 按 section 编号
+\newtheorem{definition}{定义}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+
+%%%%%%%%%% 一些重定义 %%%%%%%%%%
+%% 必须在导入中文环境之后
+\renewcommand{\contentsname}{目录}     % 将Contents改为目录
+\renewcommand{\abstractname}{摘\ \ 要} % 将Abstract改为摘要
+\renewcommand{\refname}{参考文献}      % 将References改为参考文献
+\renewcommand{\indexname}{索引}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+%\renewcommand{\proofname}{证明}
+\renewcommand{\algorithm}{算法}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  packages
+%    这部分声明需要用到的包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}    % EPS 图片支持
+\usepackage{indentfirst} % 中文段落首行缩进
+\usepackage{bm}          % 公式中的粗体字符（用命令\boldsymbol）
+\usepackage{graphics}	%让文档支持图片
+\usepackage{amsmath}	%ams可以让文档支持数学公式
+
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{hyperref}	%让文档支持超链接
+\usepackage{booktabs}	%让文档支持三线表格
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx,psfrag}
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{picins}
+\usepackage{multirow}
+\usepackage{listings} 
+\usepackage{xcolor}
+\usepackage[titletoc]{appendix} %附件支持
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  lengths
+%    下面的命令重定义页面边距，使其符合中文刊物习惯。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{27.00cm}    % 24.62
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  定义标题格式，包括title，author，affiliation，email等。
+%  在任何用到中文的地方，用\begin{CJK} ... \end{CJK}将其括起来。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\hei{本学期工作学习计划}}
+\author{肖波~~~~~~
+\\[8pt]
+\xiaowuhao 合肥微尺度物质科学国家实验室，安徽~~合肥~~230026\\[4pt]
+}
+%\date{\today}  % 这一行用来去掉默认的日期显示
+\date{\today}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  自定义命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 此行使文献引用以上标形式显示
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  显示title，并设页码为空（按杂志社要求）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle  \pagestyle{plain} \thispagestyle{empty}
+\vspace{-30pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  中文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\parbox{\textwidth}{
+%\rule{2em}{0pt}
+%\hei{摘要：}\song{这是一份关于撰写实验（或者其它文档）报告的中文的\LaTeX 模板。或有错误之处，请予以指正。}\\[5pt]
+%\hei{关键词：}\song{很关键；很关键；非常关键}
+%\\[5pt]
+%}
+%\end{center}
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\sihao{\textbf{A \LaTeX{} Template for Chinese Reports}}\\[7pt]
+\normalsize
+Weiyong Zhang~~~~~~
+\\[7pt]
+\xiaowuhao Hefei National Laboratory for Physical Sciences at the Microscale, HeFei, AnHui, 230026\\[10pt]
+\end{center}
+\begin{center}
+\parbox{\textwidth}{
+\textbf{Abstract:} This is a \LaTeX{} template used for writting documents in Chinese form.\\[4pt]
+\textbf{Keywords:} Key; Key; the Key
+}
+\end{center}
+\fi
+\section{真空平台建设}
+
+在没有最后一步超高品质观察窗之前，去掉最后一个科学腔，对系统进行抽真空做部分实验，利用该系统实现2D MOT和BEC，并可以进行一些短距离的光传输测试实验。
+
+等超高品质观察窗到了后关闭阀门对整个真空系统进行装配并制备超高真空。希望这一切能在6月底结束。
+
+\section{光传输平台的安装和测试}
+
+如果LAB公司能够比较的配合的把资料和使用手册发过来并且给予及时的技术指导的话，光学平台的安装应该可以按计划完成。目前整个平台由平台、drivebox、气泵、过滤系统组成，目前尚无资料告知如何搭配。目前手上的资料只有平台使用的步刷电机的手册和说明书、软件，但是没有和drivebox相关的东西。希望获取足够多的资料后能在五月底前完成平台的安装和移动控制测试。
+
+\section{磁场稳定系统}
+对于最后科学腔，我们需要一个稳定的磁场环境。
+电路这一块需要稳定电源以及电压控制稳流板、PID反馈电路板，电源可以在蓄电池和HEMAG电源之间选，电路板可以和电子学合作，稳流板之前徐晓天做过，可以copy几块PCB板买元件焊接。
+PID反馈板可以copy海德堡的设计，这个工程希望在6月底完成。
+
+\section{超高品质真空观察窗的采购}
+
+完成与UKAEA的沟通，实现采购，和谢虔一起完成观察窗的生产（UKAEA）到测试（Leica）再到可能的打磨最后到我们手上，这个希望在6月完成。
+
+
+\section{真空周围的建设}
+
+主要分为以下几部分：
+
+\begin{itemize}
+\item 3D MOT磁场线圈、2D磁场磁铁支架
+\item 3D MOT线圈水冷
+\item 蒸发冷却射频源系统
+\item 真空体系的支撑
+\end{itemize}
+
+这些希望在6月全部完成。
+\end{document}
+

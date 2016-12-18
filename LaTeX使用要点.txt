@@ -1,0 +1,74 @@
+【使用LaTeX模板的几点注意】
+1.在编辑中文文档时，一定要采用“XeLaTeX”命令进行编译；
+2.“%”之后的内容为注释内容；
+3.出错后，可问百度。
+
+【几个常见模块的代码展示】
+【一】公式编辑命令
+1.置于段内（句子中间）的数学公式可以放在“\(”与“\)”之间，“$”与“$”之间，或者“\begin{math}”与“\end{math}”之间，推荐第二种，简单。
+2.置于段落之间的公式，可以放在“$$”与“$$”之间，“\[”与“\]”之间，或者“\begin{displaymath}”与“\end{displaymath}”之间，这三种种方式均不提供自动编号的功能。使用“\begin{equation}”与“\end{equation}”命令则可以实现编号命令（需要结合“\label{}”命令来编号，采用“\eqref{}”命令来（在amsmath宏包中）实现引用）。
+(1)最简单的示例——波动方程
+\begin{equation}
+\nabla^2 \vec E - \frac{\mathbf{n}^2(\vec r)}{c^2}\frac{\partial^2 \vec E}{\partial t^2} = 0  \label{1}
+\end{equation}
+(2)Maxwell方程组
+\begin{equation}
+\begin{split}
+\nabla\cdot\vec E = 0 \\
+\nabla\cdot\vec B = 0 \\
+\nabla\times\vec E = -\frac{\partial \vec B}{\partial t} \\
+\nabla\times\vec B = \mu \varepsilon \frac{\partial \vec E}{\partial t} \label{2}
+\end{split}
+\end{equation}
+
+【二】插图编辑命令
+1.首先采用命令“\graphicspath{{figures/}}”，可以来设置一个专门用于存放插图的文件夹“figures”。采用“\caption{}”命令来给图片命名，“\label{}”命令来给图片编号，“\autoref{}”命令来实现图片引用。
+2.单栏居中插图的命令示例：
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{pict02-01}（注:height=2in也可）
+\caption{两能级原子与单模光场的相互作用}
+\label{fig:pict02-01}
+\end{figure}
+3.双（多）栏插图命令示例：
+单标题形式
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=2in]{pict03-04-01}%
+\hspace{0.4in}%   （表示两张图片的中间间距，其中的%不可缺失）
+\includegraphics[height=2in]{pict03-04-02}
+\caption{相位片的示意图}
+\label{fig:pict03-04}
+\end{figure}
+多标题形式
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[height=1.6in]{pict04-01}
+\caption{ITO镀膜片示意}
+\label{fig:pict04-01}
+\end{minipage}%
+\begin{minipage}[t]{0.5\linewidth}
+\centering
+\includegraphics[height=1.6in]{pict04-02}
+\caption{二氧化硅镀膜片示意}
+\label{fig:pict04-02}
+\end{minipage}
+\end{figure}
+
+【三】表格编辑命令
+一个示例
+\begin{table}[htbp]
+\centering
+\caption{通过未镀膜区域的干涉条纹的拟合结果}
+\label{tab:chap04-01}
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+拟合函数 & \multicolumn{5}{c}{$y=ae^{-\left(\frac{x-b}{c}\right)^2} \sin(kx+e)$}\\
+\hline
+拟合参数 & $a$ & $b$ & $c$ & $d$ & $e$\\
+\hline
+拟合值 & 0.409 & 493.448 & 56.186 & 0.528 & 0.292\\
+\hline
+\end{tabular}
+\end{table}

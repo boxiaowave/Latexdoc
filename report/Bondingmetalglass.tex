@@ -1,0 +1,235 @@
+\documentclass[onecolumn,a4paper,10pt]{article}
+
+\usepackage[ boldfont,slantfont]{xeCJK}  %设定支持中文
+\usepackage{multicol}
+
+\graphicspath{{figures/}}    %设置放置图片的文件夹
+
+\linespread{1.2}     %设置行间距的命令
+
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+\setsansfont{SimHei}
+
+\setCJKfamilyfont{song}{SimSun}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{yao}{FZYaoTi}
+
+\newcommand\song{\CJKfamily{song}}
+\newcommand\kai{\CJKfamily{kai}}
+\newcommand\hei{\CJKfamily{hei}}
+\newcommand\yao{\CJKfamily{yao}}
+
+\newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
+
+%%%段落首行缩进两个字
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
+\setlength{\parindent}{2em}%中文缩进两个汉字位
+
+%%%%%%%%%% 定理类环境的定义 %%%%%%%%%%
+%% 必须在导入中文环境之后
+\newtheorem{example}{例}             % 整体编号
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}[section]  % 按 section 编号
+\newtheorem{definition}{定义}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+
+%%%%%%%%%% 一些重定义 %%%%%%%%%%
+%% 必须在导入中文环境之后
+\renewcommand{\contentsname}{目录}     % 将Contents改为目录
+\renewcommand{\abstractname}{摘\ \ 要} % 将Abstract改为摘要
+\renewcommand{\refname}{参考文献}      % 将References改为参考文献
+\renewcommand{\indexname}{索引}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+%\renewcommand{\proofname}{证明}
+\renewcommand{\algorithm}{算法}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  packages
+%    这部分声明需要用到的包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}    % EPS 图片支持
+\usepackage{indentfirst} % 中文段落首行缩进
+\usepackage{bm}          % 公式中的粗体字符（用命令\boldsymbol）
+\usepackage{graphics}	%让文档支持图片
+\usepackage{amsmath}	%ams可以让文档支持数学公式
+
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{hyperref}	%让文档支持超链接
+\usepackage{booktabs}	%让文档支持三线表格
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx,psfrag}
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{picins}
+\usepackage{multirow}
+\usepackage{listings} 
+\usepackage{xcolor}
+\usepackage[titletoc]{appendix} %附件支持
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  lengths
+%    下面的命令重定义页面边距，使其符合中文刊物习惯。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{0.63cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{14.66cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  定义标题格式，包括title，author，affiliation，email等。
+%  在任何用到中文的地方，用\begin{CJK} ... \end{CJK}将其括起来。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\hei{mounted window工程图和材料熔点}}
+\author{肖波\footnote{xbustc@gmail.com}~~~~~~
+\\[8pt]
+\xiaowuhao 合肥微尺度物质科学国家实验室，安徽~~合肥~~230026\\[4pt]
+}
+%\date{\today}  % 这一行用来去掉默认的日期显示
+\date{\today}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  自定义命令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 此行使文献引用以上标形式显示
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  显示title，并设页码为空（按杂志社要求）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle  \pagestyle{plain} \thispagestyle{empty}
+\vspace{-30pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  中文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\parbox{\textwidth}{
+%\rule{2em}{0pt}
+%\hei{摘要：}\song{这是一份关于撰写实验（或者其它文档）报告的中文的\LaTeX 模板。或有错误之处，请予以指正。}\\[5pt]
+%\hei{关键词：}\song{很关键；很关键；非常关键}
+%\\[5pt]
+%}
+%\end{center}
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\sihao{\textbf{A \LaTeX{} Template for Chinese Reports}}\\[7pt]
+\normalsize
+Weiyong Zhang~~~~~~
+\\[7pt]
+\xiaowuhao Hefei National Laboratory for Physical Sciences at the Microscale, HeFei, AnHui, 230026\\[10pt]
+\end{center}
+\begin{center}
+\parbox{\textwidth}{
+\textbf{Abstract:} This is a \LaTeX{} template used for writting documents in Chinese form.\\[4pt]
+\textbf{Keywords:} Key; Key; the Key
+}
+\end{center}
+\fi
+\section{为什么需要mounted window以及特殊观察窗重制的步骤}
+
+为了利用Leica制作的成像系统实现期望中的高分辨，位于成像系统前的6mm的玻璃片的单面面型必须小于0.15个波长，否者成像光无法完美聚焦，UKAEA提供给我们的特殊观察窗的玻璃投射波前差在0.1个波长，但是焊接过程中的加热导致了单面面型升高到2个波长左右，无法满足我们的需求，最好的办法是直接对玻璃进行MRF技术打磨，但是，由于观察窗的特殊结构，不锈钢表面比玻璃两表面的要高，使得打磨的探头无法接触玻璃表面进行打磨。所以我们必须重制我们的观察窗，步骤如下：
+\begin{itemize}
+\item 设计新的mounted window，设计中使玻璃表面比周围不锈钢表面高0.5mm，并寻找厂家生产。
+\item 找国防科大等单位打磨玻璃表面，使得面型满足要求，同时得避免这个过程中玻璃和焊接环之间出现漏孔。
+\item 将UKAEA的观察窗上的mounted window切割下来，将新的mounted window焊接到法兰上去。
+\end{itemize}
+
+也有可能可以使用IBF打磨技术，不用探头直接接触玻璃，也就不需要上述这么多的焊接过程。
+
+\section{不同材料熔点和热膨胀系数}
+
+我们想做的mounted window主要由三部分材料构成， 一是玻璃材料Fused Silica，二是外围的不锈钢316LN，三是承载玻璃的不锈钢焊接环，这个不锈钢焊接环猜测是出于某种原因一般不直接使用316LN或者304SS等一般不锈钢，而是采用例如INCONEL 600这种的镍铁合金。表1列出了四种材料的熔点和热膨胀系数。
+\begin{table}[htbp]
+\renewcommand\arraystretch{1.6}
+\centering
+\caption{四种材料热学性质对比}
+\begin{tabular}{p{70pt}|p{100pt}|p{100pt}|p{100pt}}
+\hline
+材料 &适用温度&热膨胀系数$\mu m/m\cdot K$&熔点\\
+\hline
+\multirow{2}{*}{Inconel 600}  &93$\sim$427$^{\circ}$C &13.3$\sim$14.6 &1354$\sim$1413$^{\circ}$C  \\
+\cmidrule{2-3}
+&538$\sim$982$^{\circ}$C & 15.12$\sim$16.73 & [1370$\sim$1425$^{\circ}$C]\\
+\hline
+Inconel 718  &93$\sim$760$^{\circ}$C &13.158$\sim$16.038 &1260$\sim$1336$^{\circ}$C  \\
+\hline
+\multirow{4}{*}{Fused Silica} & \multirow{4}{*}{20$\sim$1000$^{\circ}$C} & \multirow{4}{*}{0.54} & 
+1715$^{\circ}$C\\
+&&&Soften point:1683$^{\circ}$C\\
+&&&Annealing point:1215$^{\circ}$C\\
+&&&Strain point:1120$^{\circ}$C\\
+\hline
+316LN &20$\sim$1000$^{\circ}$C &19.5&1345$\sim$1440$^{\circ}$C\\
+\hline
+\end{tabular}
+\end{table}
+
+由此看来，焊接环与Fused Silica的热膨胀系数差了一个数量级，所以采用Inconel这种合金并不是为了使二者在加热时膨胀度保持一致避免挤压。同时，熔点上看来二者相差也是比较明显的。
+
+查询了一下普通玻璃如pyrex的热膨胀系数，有5.5，非常接近镍铁合金的热膨胀系数，也就是说普通观察窗的玻璃金属焊接的确是考虑了热膨胀系数的匹配，也许这也是fused silica烘烤温度不高的一个原因。
+
+\begin{comment}
+\newpage
+\section{关于Diffusion Bond}
+查看了一下各种公司的产品目录以及UKAEA告知我们的一些情况，观察窗中大部分的金属与玻璃之间的焊接应该是使用Diffusion Bond技术完成的，以下是维基百科的介绍：
+\\
+\\
+\emph{\textbf{\large{Diffusion bonding is a solid-state welding technique used in metalworking, capable of joining similar and dissimilar metals. It operates on the materials science principle of solid-state diffusion, wherein the atoms of two solid, metallic surfaces intermingle over time under elevated temperature. Diffusion bonding is typically implemented by applying both high pressure and high temperature to the materials to be welded; it is most commonly used to weld "sandwiches" of alternating layers of thin metal foil and metal wires or filaments.}}}
+\\
+\\
+可见，这个技术利用的是不同材料之间的原子扩散实现接合，这个过程中需要高温高压提高原子的扩散速度，同时，材料的接触面必须接触紧密，这就要求表面足够光滑。\\
+\\
+\emph{\textbf{\large{Diffusion bonding is performed by clamping the two pieces to be welded with their surfaces abutting each other. Prior to welding, these surfaces must be machined to as smooth a finish as economically viable, and kept as free from chemical contaminants or other detritus as possible. Any intervening material between the two metallic surfaces may prevent adequate diffusion of material. Once clamped, pressure and heat are applied to the components, usually for many hours.\\At the microscopic level, diffusion bonding occurs in three simplified stages:\\\\
+Before the surfaces completely contact, asperities (very small surface defects) on the two surfaces contact at the microscopic level and plastically deform. As these asperities deform, they interlink forming interfaces between the two surfaces.\\\\Elevated temperature and pressure causes accelerated creep in the materials; grain boundaries and raw material migrate and gaps between the two surfaces are reduced to isolated pores.\\\\Material begins to diffuse across the boundary of the abutting surfaces, confusing this boundary and creating a bond.}}}
+\\
+\\
+Diffusion Bonding可以用于很多不同固态物质的焊接，这里可能主要讲的是金属之间的焊接，对于玻璃和玻璃，玻璃和金属，还有下面这种Anodic Bonding，我觉得它应该是Diffusion Bonding的一种。
+
+
+\section{Anodic Bonding}
+
+\emph{\textbf{\large{Anodic bonding is a process to seal glass to either silicon or metal; it is commonly used to seal glass to thin pieces of silicon in electronics and microfluidics. In the electronics industry, the term "wafer" is often used to describe thin pieces of glass or silicon. wafer bonding procedure without any intermediate layer. This bonding technique, also known as field assisted bonding or electrostatic sealing, is mostly used for connecting silicon/glass and metal/glass through electric fields. The requirements for anodic bonding are clean and even wafer surfaces and atomic contact between the bonding substrates through a sufficiently powerful electrostatic field. Also necessary is the use of borosilicate glass containing a high concentration of alkali ions. The coefficient of thermal expansion (CTE) of the processed glass needs to be similar to those of the bonding partner.\\
+\\
+Anodic bonding can be applied with glass wafers at temperatures of 250 to 400 °C or with sputtered glass at 400 °C. Structured borosilicate glass layers may also be deposited by plasma-assisted e-beam evaporation.
+}}}
+\\\\
+在电场帮助下实现diffusion bonding的过程，要求与diffusion bonding类似，但是这项技术要求材料的CTE接近，对于一般玻璃来说，这个不难实现，对于fused silica，看来还是有一定难度的。
+\\\\
+\emph{\textbf{\large{Differing coefficients of thermal expansion pose challenges for anodic bonding. Excessive mismatch can harm the bond through intrinsic material tensions and cause disruptions in the bonding materials. The use of sodium-containing glasses, e.g. Borofloat or Pyrex, serve to reduce the mismatch. These glasses have a similar CTE to silicon in the range of applied temperature, commonly up to 400 °C.}}}
+\end{comment}
+
+
+\end{document}
+
