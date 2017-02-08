@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1482068981 "光传输方案.tex" "光传输方案.pdf" "光传输方案" 1482068981
+["pdflatex"] 1482068981 "光传输方案.tex" "光传输方案.pdf" "光传输方案" 1482256918
   "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty" 1463608860 8253 473e0e41f9adadb1977e8631b8f72ea6 ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty" 1463608860 18425 5b3c0c59d76fac78978b5558e83c1f36 ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/unicode-data/CaseFolding.txt" 1449876215 74499 11c335947e5ffa8ac69a3e530b8d2b40 ""
@@ -31,11 +31,11 @@
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1474461986 3873412 d5ebb588a7b9e5ac64211cdb5ea0ebce ""
   "/usr/local/texlive/2016/texmf.cnf" 1474461929 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "光传输方案.aux" 1482068764 2903 b1a9ad6afd179523ac761546fc1f1db0 ""
-  "光传输方案.tex" 1482068980 24281 a22385a0e031aa73bf42190c994fe927 ""
+  "光传输方案.aux" 1482067395 2903 b1a9ad6afd179523ac761546fc1f1db0 ""
+  "光传输方案.tex" 1482069766 24281 a22385a0e031aa73bf42190c994fe927 ""
   (generated)
+  "光传输方案.out"
   "光传输方案.aux"
   "光传输方案.toc"
-  "光传输方案.log"
   "光传输方案.pdf"
-  "光传输方案.out"
+  "光传输方案.log"

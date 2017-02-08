@@ -27,9 +27,9 @@
 %\usetheme{default}
 %\usetheme{m}
 %\usetheme{AnnArbor}
-%\usetheme{Antibes}
+\usetheme{Antibes}
 %\usetheme{Bergen}
-\usetheme{Berkeley}
+%\usetheme{Berkeley}
 %\usetheme{Berlin}
 %\usetheme{Boadilla}
 %\usetheme{CambridgeUS}
@@ -102,7 +102,7 @@
 
 \setCJKmainfont[BoldFont={STXihei},ItalicFont={STKaiti}]{STSong}
 \setsansfont{STXihei}
-
+%\setsansfont{Monaco}
 \setCJKfamilyfont{song}{STSong}
 \setCJKfamilyfont{kai}{STKaiti}
 \setCJKfamilyfont{hei}{STXihei}
@@ -125,29 +125,29 @@
 \newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
 
 %%%段落首行缩进两个字
-\makeatletter
-\let\@afterindentfalse\@afterindenttrue
-\@afterindenttrue
-\makeatother
-\setlength{\parindent}{2em}%中文缩进两个汉字位
+% \makeatletter
+% \let\@afterindentfalse\@afterindenttrue
+% \@afterindenttrue
+% \makeatother
+% \setlength{\parindent}{2em}%中文缩进两个汉字位
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[\LaTeX{} Template]{A \LaTeX{} Template for Reports} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title{Many-Body Localization in Optical Lattice} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Weiyong Zhang\\章维勇} % Your name
+\author{Bo Xiao} % Your name
 \institute[USTC] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 University of Science and Technology of China \\ % Your institution for the title page
 \medskip
-\textit{zhangwya@gmail.com} % Your email address
+\textit{xbustc@gmail.com} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
 
 \begin{document}
-
+\noindent
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
@@ -162,56 +162,292 @@ University of Science and Technology of China \\ % Your institution for the titl
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+\section{Quantum Thermalization} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\subsection{Microcanonical Ensemble} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
+\frametitle{定义}
+孤立系统:\\~
 
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\pause 与环境无粒子和能量交换。\\~
+
+\pause 粒子数与能量守恒。
+
 \end{frame}
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
+\frametitle{系综理论}
+\noindent
+系综理论的基本观点：\\~\\
+\begin{block}{宏观量的系统时间平均等于系综平均}
+$$\overline{u} = <u>_t$$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{各态遍历假说}
+系统的运动方程由哈密顿正则方程给出：
+$$\dot{q}_i=\frac{\partial H}{\partial p_i},\dot{p}_i=-\frac{\partial H}{\partial q_i}$$
 
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+系统状态随时间的变化可以用代表点在相空间中的运动轨道来表示。\\~
+
+\pause 上述运动方程表明，从不同初态出发系统在相空间内的运动轨道不相交。
+
 \end{frame}
 
-%------------------------------------------------
-
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{各态遍历假说}
+\noindent
+玻尔兹曼提出各态遍历假说:\\~
+
+\begin{block}{各态遍历假说}
+对于孤立的力学系统，只要时间足够长，系统从任意初态出发，都将经过能量曲面上的一切微观态。
+\end{block}
+\end{frame}
+
+\begin{frame}{Thermalization}
+\noindent
+
+\begin{block}{热力学平衡}
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\item 系统的宏观量不再变换，经历的所有可能微观状态。
+\item 系统的热力学平衡时的统计性质与初态无关。
+\end{itemize}
+\end{block}
+\noindent
+\begin{block}{Thermalization}
+系统能够进行各态遍历,平衡时宏观量的统计性质与初态无关。
+\end{block}
+\end{frame}
+
+\begin{frame}{微正则系综宏观量的平衡统计}
+\noindent
+各态遍历下，对于微正则系综所有可能微观状态出现的概率相同，状态分布在等能面上
+
+$$
+{\rho}_n=
+\begin{cases}
+\frac{1}{\Omega},&E\le E_n \le E+\Delta E\\ 
+0, &\text{other}
+\end{cases}
+$$
+由此可以推导宏观量的热力学平衡期望值
+$$\overline{u}=\sum_{n}{\rho_n u_n}$$
+
+\end{frame}
+%------------------------------------------------
+
+\subsection{Eigenstate Thermalization Hypothesis（ETH）}
+\begin{frame}
+\frametitle{为什么要提出ETH？}
+量子系统的态在Hamiltonian作用下的含时变化遵循薛定谔方程
+
+$$ i \hbar\frac{\partial \Psi}{\partial t}=H\Psi$$
+
+\pause H是幺正的，量子态的幺正变化无法擦除初态的信息。
+\\~
+
+\pause 但是有一类量子系统可以被平衡统计理论表述，平衡态的宏观量大小与初态无关，有着经典统计理论的各态遍历性质，这个被称为Quantum ergodic.
+\\~
+
+\pause ETH的目标就是解释对于幺正变化的量子系统，它们是如何各态遍历，并被平衡统计理论所描述。
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{从宏观量的平衡统计出发}
+
+在能量本征态基矢下，初态$|\Psi>$可以表示为能量本征态的叠加：
+$$|\Psi>=\sum_{\alpha}c_{\alpha}|\alpha>$$
+\\~
+
+在H作用下随时间变化：
+$$|\Psi(t)>=\sum_{\alpha}c_{\alpha}e^{-i E_\alpha t/\hbar}|\alpha>$$
+\\~
+
+宏观量在H作用下随时间变化：
+
+
+$$A(t)=\sum_{\alpha,\beta}c_{\alpha}c_{\beta}^{*}e^{-i(E_\alpha-E_\beta) t/\hbar}A_{\alpha \beta}$$\\
+
+$$=\sum_{\alpha}|c_{\alpha}|^{2}A_{\alpha \alpha}+\sum_{\alpha \ne \beta}c_{\alpha}c_{\beta}^{*}e^{-i(E_\alpha-E_\beta) t/\hbar}A_{\alpha \beta}$$
+\end{frame}
+
+\begin{frame}
+宏观量的时间平均
+$$<A>_t=\frac{1}{\tau}\lim_{\tau \to \infty}\int_{0}^{\tau}A(t)dt $$
+
+$$=\sum_{\alpha}|c_{\alpha}|^{2}A_{\alpha \alpha}+i\hbar\lim_{\tau\to \infty}[\sum_{\alpha\ne\beta}\frac{c_{\alpha}c_{\beta}^{*}A_{\alpha \beta}}{E_\alpha-E_\beta}(\frac{e^{-i(E_\alpha-E_\beta)\tau/\hbar-1}}{\tau})]$$
+
+平衡统计理论下微正则系综的守恒量的时间平均等于系综平均：
+
+$$<A>_mc=\sum_{\alpha}{\rho_\alpha A_{\alpha\alpha}}=\frac{1}{N}\sum_{\alpha}{A_{\alpha\alpha}}$$
+
+\pause 如何将上述两个公式等价呢？
+
+\end{frame}
+
+\begin{frame}{ETH的表述}
+\noindent
+For an arbitrary initial state,  $<\hat{A}>$ will ultimately evolve to its value predicted by a microcanonical ensemble, only small fluctuations around that value, provided that the following two conditions are met:
+
+\begin{itemize}
+\item {The diagonal matrix elements $A_{\alpha \alpha }$vary smoothly as a function of energy.}
+\item {The off-diagonal matrix elements $A_{\alpha \beta }$, with $ \alpha \neq \beta$ , are much smaller than the diagonal matrix elements.}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+在两个约束条件下，非对角项非常小，为随时间变化的涨落项。
+
+$$<A>_t=\sum_{\alpha}|c_{\alpha}|^{2}A_{\alpha \alpha} \thickapprox A\sum_{\alpha}|c_{\alpha}|^{2}=A$$
+微正则系综的结果：
+$$<A>_{mc}\thickapprox \frac{1}{N}*N*A=A$$
+
+So,
+$$<A>_t=<A>_{mc}$$
+
+\end{frame}
+
+\begin{frame}
+违背ETH的系统：
+\begin{itemize}
+    \item Intergrate System,有着自己的ETH表述,可以在一定条件下热化。
+    \item Localized System,无法热化, non-ergodic, Anderson localization, Many-body localization.
+    \item ...
 \end{itemize}
 \end{frame}
+% \begin{frame}{Another saying of Thermalization}
+% For full system, density matrix does not thermalize under unitary evolution:
+% $$\rho(t)\ne\rho_{eq}(T)=Z^{-1}(T)exp(-H/k_B T)$$
+% T is dependent on initial energy.\\~
 
-%------------------------------------------------
+% But subsystems thermalize:
+% $$\lim_{t\to\infty,\overline{S}\to\infty}\rho_{S}(t)=\lim_{\overline{S}\to\infty}\rho^{(eq)}_{S}(T)$$
+% Full system acts as a reservior for subsystems, this is another statement of thermalization.
 
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
 
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
+% \end{frame}
 
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
+\subsection{Anderson localization}
+\begin{frame}{Introduction}
+
+Proposed by P.W.Anderson 
+
+\begin{itemize}
+\item First introduced in 1958（Anderson, P. W. (1958).PhysRev.109.1492）
+
+\item suggest the possibility of eletron localization in semiconductor which contains random impurities or defects.
+
+\item Consider single particle without interaction but can hop from one site to another.
+
+\end{itemize}
+
 \end{frame}
 
-%------------------------------------------------
+\begin{frame}{Quantum Model}
+
+Tight-binding model hamiltonian
+
+$$H = -\sum_{i,j}J_{ij} \hat{a}^{+}_{i}\hat{a}_{j}+\sum_{i}U_{i}\hat{a}^{+}_{i}\hat{a}_{i}$$
+
+uniform $U_{i}$: extended wavefunction(Bloch wave)\\~
+
+
+random  $U_{i}$: single particle localized wavefunction
+
+\end{frame}
+\begin{frame}{Explanation:matter wave interference}
+For single particle in lattice,
+\begin{itemize}
+\item uniform potential: matter wave freely propagation through lattice
+\item random potential: destructive interference between initial wave and wave scattered by impurities
+\end{itemize}
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{AndersonLocalization}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Experiment of Anderson localization in ultracold atoms}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{adbec}
+\end{figure}
+\tiny{Anderson localization in non-intereacting 1d BEC\\~
+
+Juliette Billy et.al.Nature 453, 891-894}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=1.1\linewidth]{adlat}
+\end{figure}
+\tiny{Anderson Localization in 3D ultracold atoms\\~
+
+F. Jendrzejewski et.al.Nature Physics 8, 398–403 (2012)}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{scaling-law theory of anderson localization}
+
+According to scaling-law theory, for models of different dimension system:
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{scaling}
+\end{figure}
+\column{0.4\textwidth}
+g is conductance, 
+$$\lim_{g\to\infty}\beta(g)=d-2$$
+$$\lim_{g\to0}\beta(g)=log(g)$$
+
+\end{columns}
+\end{frame}
+
+\begin{frame}
+So, \\~
+\begin{itemize}
+
+\item $d\leqslant 2$, system is localized for arbitary weak disorder\\~
+
+\item $d\geqslant 3$, system is localized for some critical disorder strength.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+Thermalization in anderson localization.
+
+\begin{itemize}
+
+\item Localized states fails to thermalize,violate ETH, so some memory of initial conditiion is preserved in local observables at long times. 
+
+\pause \item Local observables differ from eigenstate to eigenstate in same energy shell. 
+
+\pause \item Mott insulator—> ground state localization,but Anderson localization is not limited in ground state.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Many-body localization}
+
+Interaction leads eigenstates to be many-body states due to degree coupling,\\~
+
+Localization with interaction, so called 'Many-body localization'.
+
+\end{frame}
+
+\begin{frame}{Experiments}
+Bloch group:Localization of interacting fermions in a quasirandom optical lattice
+\begin{block}{Theoritical Model}
+$$\hat{H}=-J\sum_{i,\sigma}(\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i,\sigma}+h.c.)+$$\\~
+$$\vartriangle \sum_{i,\sigma}cos(2\pi\beta i+\phi)\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i,\sigma}+U\sum_{i}\hat{n}_{i,\uparrow}\hat{n}_{i,\downarrow}$$
+\end{block}
+\end{frame}
 
 \begin{frame}
 \frametitle{Multiple Columns}
@@ -281,7 +517,7 @@ $E = mc^2$
 \frametitle{Figure}
 Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
 %\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
+%\includegraphics[width=0.8\linewidth]{AndersonLocalization.png}
 %\end{figure}
 \end{frame}
 
