@@ -8,8 +8,6 @@
 *.synctex*
 *.log
 *.icloud
-report/*.pdf
-lecture/*.pdf
 *.snm
 *.nav
 *.vrb
