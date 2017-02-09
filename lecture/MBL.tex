@@ -432,7 +432,7 @@ Thermalization in anderson localization.
 \end{itemize}
 
 \end{frame}
-
+\subsection{Many-body localization}
 \begin{frame}{Many-body localization}
 
 Interaction leads eigenstates to be many-body states due to degree coupling,\\~
@@ -440,12 +440,44 @@ Interaction leads eigenstates to be many-body states due to degree coupling,\\~
 Localization with interaction, so called 'Many-body localization'.
 
 \end{frame}
-
+\subsection{Experiments}
 \begin{frame}{Experiments}
 Bloch group:Localization of interacting fermions in a quasirandom optical lattice
 \begin{block}{Theoritical Model}
-$$\hat{H}=-J\sum_{i,\sigma}(\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i,\sigma}+h.c.)+$$\\~
+$$\hat{H}=-J\sum_{i,\sigma}(\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i+1,\sigma}+h.c.)+$$\\~
 $$\vartriangle \sum_{i,\sigma}cos(2\pi\beta i+\phi)\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i,\sigma}+U\sum_{i}\hat{n}_{i,\uparrow}\hat{n}_{i,\downarrow}$$
+\end{block}
+\end{frame}
+
+\begin{frame}{System Setup and Phase diagram}
+$$\beta=\frac{\lambda_s}{\lambda_d}=0.721,\lambda_d= 738nm,Qusirandom!$$
+$$Initial\ State:CDW,imbanlance\ I=\frac{N_e-N_o}{N_e+N_o}\thickapprox1 $$
+\begin{figure}
+\includegraphics[width=1\linewidth]{Phasediagram}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{lm1.png}
+\end{figure}
+\column{0.5\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{lm2.png}
+\end{figure}
+\end{columns}
+~\\
+~\\
+\rightline{\tiny{Schreiber, M. et.al(2015). Science, 349(6250), 842–845. }}
+\end{frame}
+
+\begin{frame}
+Coupling identical one-dimensional many-body localized system ,$J_{\perp}:coupling\ between\ tubes$
+\begin{block}{Theoritical Model}
+$$\hat{H}=-J\sum_{i,j,\sigma}(\hat{c}_{i+1,j,\sigma}^{\dagger}\hat{c}_{i,j,\sigma}+h.c.)-J_{\perp}\sum_{i,j,\sigma}(\hat{c}_{i,j+1,\sigma}^{\dagger}\hat{c}_{i,j,\sigma}+h.c.)+$$\\~
+$$\vartriangle \sum_{i,j,\sigma}cos(2\pi\beta i+\phi)\hat{n}_{i,j,\sigma}+U\sum_{i,j}\hat{n}_{i,j,\uparrow}\hat{n}_{i,j,\downarrow}$$
 \end{block}
 \end{frame}
 
