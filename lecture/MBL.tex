@@ -282,7 +282,7 @@ $$=\sum_{\alpha}|c_{\alpha}|^{2}A_{\alpha \alpha}+i\hbar\lim_{\tau\to \infty}[\s
 
 平衡统计理论下微正则系综的守恒量的时间平均等于系综平均：
 
-$$<A>_mc=\sum_{\alpha}{\rho_\alpha A_{\alpha\alpha}}=\frac{1}{N}\sum_{\alpha}{A_{\alpha\alpha}}$$
+$$<A>_{mc}=\sum_{\alpha}{\rho_\alpha A_{\alpha\alpha}}=\frac{1}{N}\sum_{\alpha}{A_{\alpha\alpha}}$$
 
 \pause 如何将上述两个公式等价呢？
 
@@ -440,8 +440,9 @@ Interaction leads eigenstates to be many-body states due to degree coupling,\\~
 Localization with interaction, so called 'Many-body localization'.
 
 \end{frame}
-\subsection{Experiments}
-\begin{frame}{Experiments}
+\section{Experiments}
+\subsection{one-dimensional quasirandom system}
+\begin{frame}
 Bloch group:Localization of interacting fermions in a quasirandom optical lattice
 \begin{block}{Theoritical Model}
 $$\hat{H}=-J\sum_{i,\sigma}(\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i+1,\sigma}+h.c.)+$$\\~
@@ -479,6 +480,43 @@ Coupling identical one-dimensional many-body localized system ,$J_{\perp}:coupli
 $$\hat{H}=-J\sum_{i,j,\sigma}(\hat{c}_{i+1,j,\sigma}^{\dagger}\hat{c}_{i,j,\sigma}+h.c.)-J_{\perp}\sum_{i,j,\sigma}(\hat{c}_{i,j+1,\sigma}^{\dagger}\hat{c}_{i,j,\sigma}+h.c.)+$$\\~
 $$\vartriangle \sum_{i,j,\sigma}cos(2\pi\beta i+\phi)\hat{n}_{i,j,\sigma}+U\sum_{i,j}\hat{n}_{i,j,\uparrow}\hat{n}_{i,j,\downarrow}$$
 \end{block}
+~\\
+\rightline{\tiny{Bordia, P. et.al(2016). Physical Review Letters, 116(14), 1–6.}}
+\end{frame}
+
+\begin{frame}{System Setup}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{coupling1}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\includegraphics[width=1\linewidth]{coupling2}
+\end{figure}
+\column{0.4\textwidth}
+$$\Delta = 5J$$
+$$2D:J_{\perp}=J$$
+$$1D^{+}:J_{\perp}\lesssim 10^{-3} J$$
+\end{columns}
+\begin{center}
+\small{non-zero $J_{\perp}$ makes atom can move between tubes free,}\\
+\small{with interaction, tubes act as a thermal bath for each other}
+\end{center}
+\end{frame}
+
+\begin{frame}{Extract Lifetime}
+Fitting function:
+
+$$I=(Ae^{-t/t_1}cos(\nu t)+I_{st})e^{-(\Gamma t)^\beta}$$
+
+Imbanlance lifetime:
+$$T_{1/e} = 1/\Gamma$$
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{lifetime}
+\end{figure}
 \end{frame}
 
 \begin{frame}
