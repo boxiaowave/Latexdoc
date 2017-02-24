@@ -102,7 +102,7 @@
 
 \setCJKmainfont[BoldFont={STXihei},ItalicFont={STKaiti}]{STSong}
 \setsansfont{STXihei}
-%\setsansfont{Monaco}
+\setsansfont{Monaco}
 \setCJKfamilyfont{song}{STSong}
 \setCJKfamilyfont{kai}{STKaiti}
 \setCJKfamilyfont{hei}{STXihei}
@@ -168,12 +168,12 @@ University of Science and Technology of China \\ % Your institution for the titl
 \subsection{Microcanonical Ensemble} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{定义}
-孤立系统:\\~
+\frametitle{Definition}
+Isolated System:\\~
 
-\pause 与环境无粒子和能量交换。\\~
+\pause No Particle and energy exchange with environment\\~
 
-\pause 粒子数与能量守恒。
+\pause Conserved energy and particle number
 
 \end{frame}
 
@@ -185,16 +185,16 @@ University of Science and Technology of China \\ % Your institution for the titl
 $$\overline{u} = <u>_t$$
 \end{block}
 \end{frame}
-\begin{frame}
-\frametitle{各态遍历假说}
-系统的运动方程由哈密顿正则方程给出：
-$$\dot{q}_i=\frac{\partial H}{\partial p_i},\dot{p}_i=-\frac{\partial H}{\partial q_i}$$
+% \begin{frame}
+% \frametitle{各态遍历假说}
+% 系统的运动方程由哈密顿正则方程给出：
+% $$\dot{q}_i=\frac{\partial H}{\partial p_i},\dot{p}_i=-\frac{\partial H}{\partial q_i}$$
 
-系统状态随时间的变化可以用代表点在相空间中的运动轨道来表示。\\~
+% 系统状态随时间的变化可以用代表点在相空间中的运动轨道来表示。\\~
 
-\pause 上述运动方程表明，从不同初态出发系统在相空间内的运动轨道不相交。
+% \pause 上述运动方程表明，从不同初态出发系统在相空间内的运动轨道不相交。
 
-\end{frame}
+% \end{frame}
 
 \begin{frame}
 \frametitle{各态遍历假说}
@@ -211,7 +211,7 @@ $$\dot{q}_i=\frac{\partial H}{\partial p_i},\dot{p}_i=-\frac{\partial H}{\partia
 
 \begin{block}{热力学平衡}
 \begin{itemize}
-\item 系统的宏观量不再变换，经历的所有可能微观状态。
+\item 系统的宏观量不再变换，经历所有可能微观状态。
 \item 系统的热力学平衡时的统计性质与初态无关。
 \end{itemize}
 \end{block}
@@ -251,7 +251,7 @@ $$ i \hbar\frac{\partial \Psi}{\partial t}=H\Psi$$
 \pause 但是有一类量子系统可以被平衡统计理论表述，平衡态的宏观量大小与初态无关，有着经典统计理论的各态遍历性质，这个被称为Quantum ergodic.
 \\~
 
-\pause ETH的目标就是解释对于幺正变化的量子系统，它们是如何各态遍历，并被平衡统计理论所描述。
+\pause 为了解释Quantum ergodic,人们提出了Eigenstate Thermalization Hypothesis。
 
 \end{frame}
 
@@ -423,11 +423,9 @@ Thermalization in anderson localization.
 
 \begin{itemize}
 
-\item Localized states fails to thermalize,violate ETH, so some memory of initial conditiion is preserved in local observables at long times.
+\item Localized states fails to thermalize,violate ETH, so some memory of initial condition is preserved in local observables at long times.
 
 \pause \item Local observables differ from eigenstate to eigenstate in same energy shell.
-
-\pause \item Mott insulator—> ground state localization,but Anderson localization is not limited in ground state.
 
 \end{itemize}
 
@@ -520,98 +518,187 @@ $$T_{1/e} = 1/\Gamma$$
 \end{frame}
 
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
+Periodically Driving a Many-Body Localized Quantum System,$\nu:modulation\ frequency$
+\begin{block}{Theoritical Model}
+$$\hat{H}=-J\sum_{i,\sigma}(\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i+1,\sigma}+h.c.)+$$\\~
+$$(\vartriangle+A sin(2\pi\nu t)) \sum_{i,\sigma}cos(2\pi\beta i+\phi)\hat{c}_{i,\sigma}^{\dagger}\hat{c}_{i,\sigma}+U\sum_{i}\hat{n}_{i,\uparrow}\hat{n}_{i,\downarrow}$$
+\end{block}
+~\\
+\rightline{\tiny{Pranjal, B. et.al(2016). arxiv:1607.07868}}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
+
+\begin{frame}{Phase Diagram}
+    \begin{figure}
+    \includegraphics[width=0.8\linewidth]{modulation}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Dynamical Response}
+  \begin{itemize}
+    \item \small{When $\nu$ is small, system can response to the time-dependent Hamilatonian.}
+    \item \small{When $\nu$ is large, the dynamics is effectively governed by the time-averaged non-ergodic Hamilatonian.}
+  \end{itemize}
+    \begin{figure}
+    \includegraphics[width=0.8\linewidth]{Moduevolu}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Dynamical Phase Diagram}
+  \begin{figure}
+  \includegraphics[width=1\linewidth]{Phasegram}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Level Statistic}
+Define level statistic parameter:
+$$r=min[\frac{\epsilon_{\alpha+1}-{\epsilon}_\alpha}{{\epsilon}_\alpha-{\epsilon}_{\alpha-1}},\frac{\epsilon_{\alpha}-{\epsilon}_{\alpha-1}}{{\epsilon}_{\alpha+1}-{\epsilon}_{\alpha}}]$$
+Typical distributions of r:
+\begin{itemize}
+  \item Circular orthogonal ensemble(COE):$$P_{COE}=\frac{2}{3}(\frac{1}{(1+r)^2}+\frac{sin(\frac{2\pi r}{r+1})}{2\pi r^2}$$
+  $$+\frac{sin(\frac{2\pi }{r+1})}{2\pi}-\frac{cos(\frac{2\pi }{r+1})}{r+1}-\frac{cos(\frac{2\pi r}{r+1})}{r(r+1)})$$
+  \item Possion:$$P_{POI}=\frac{2}{(1+r)^2}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Level Statistic}
+Use the distribution to determine different phases:
+\begin{itemize}
+\item For MBL phase, there is no level repulsion，eigenstates has large distance and little overlap in Fock space,so Possion Statistic.
+\item For ergodic phase, coupling leads to level repulsion,so COE.
+\end{itemize}
+\end{frame}
+
+\subsection{2-dimension many-body localized system}
+\begin{frame}
+\begin{center}
+  \textbf{Exploring the many-body localization transition in two dimensions}
+\end{center}
+\end{frame}
 
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+  \begin{block}{Theoritical Model}
+  $$\hat{H}=-J\sum_{<i,j>}(\hat{a}_{i}^{\dagger}\hat{a}_{j})-\frac{U}{2}\sum_{i}(\hat{n}_{i}^{\dagger}(\hat{n}_{i}-1)+\sum_i(\delta_i+V_i)\hat{n}_i^{\dagger}$$
+  \end{block}
+$\delta:onsite\ random\ potential$
+$disorder\ strength\ \Delta:full-width\ half-maximum\ of\ disorder\ distribution$
 \end{frame}
+
+\begin{frame}{Experimental Setup}
+  \begin{figure}
+  \includegraphics[width=0.8\linewidth]{2dset}
+  \end{figure}
+  \small{Technique:High resolution Imaging, DMD with 787.5nm laser}\\
+  \small{Interaction $U=24.4J, J/h=24.8Hz$}
+  \rightline{\tiny{Choi, J. et.al(2016). Science, 352(6293), 1547–1552.}}
+\end{frame}
+
+\begin{frame}{Number Imbanlance}
+  Use Number Imbalance to identify diffrent phases:
+  $$I=\frac{N_L-N_R}{N_L+N_R}$$
+  In this experiment, I is meausured in the center region over 5 sites in the y direction.
+\end{frame}
+
+\begin{frame}{Dynamics}
+  \begin{figure}
+  \includegraphics[width=0.8\linewidth]{2ddy}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Identify MBL Transition}
+\small{$$\delta n =({\sum}_{i}[n_i(0)-n_i(\Delta)]^2)$$}
+\small{$$n_i(\Delta)=\frac{1}{5}{\sum}_{j=-2}^{2}n_{i,j}(0)$$}
+\begin{figure}
+ \includegraphics[width=1\linewidth]{ident}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Identify MBL Transition}
+\small{Normalized Density:$$\bar{n}_i(\Delta) ={n}_i(\Delta)/{n}_i(0)\~e^{-\lambda(\Delta)i}$$}
+\begin{figure}
+ \includegraphics[width=1\linewidth]{densitydecay}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Effect of Interaction}
+  \small{Reduce the density, therefore interaction effect.}\\~
+  \small{Critical point shift can be observed,$5.3J\to3.6J$}
+  \begin{figure}
+   \includegraphics[width=0.6\linewidth]{inter}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Table}
+% \begin{table}
+% \begin{tabular}{l l l}
+% \toprule
+% \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+% \midrule
+% Treatment 1 & 0.0003262 & 0.562 \\
+% Treatment 2 & 0.0015681 & 0.910 \\
+% Treatment 3 & 0.0009271 & 0.296 \\
+% \bottomrule
+% \end{tabular}
+% \caption{Table caption}
+% \end{table}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Theorem}
+% \begin{theorem}[Mass--energy equivalence]
+% $E = mc^2$
+% \end{theorem}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+% \frametitle{Verbatim}
+% \begin{example}[Theorem Slide Code]
+% \begin{verbatim}
+% \begin{frame}
+% \frametitle{Theorem}
+% \begin{theorem}[Mass--energy equivalence]
+% $E = mc^2$
+% \end{theorem}
+% \end{frame}\end{verbatim}
+% \end{example}
+% \end{frame}
+
+% %------------------------------------------------
+
+% \begin{frame}
+% \frametitle{Figure}
+% Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+% %\begin{figure}
+% %\includegraphics[width=0.8\linewidth]{AndersonLocalization.png}
+% %\end{figure}
+% \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
+% \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+% \frametitle{Citation}
+% An example of the \verb|\cite| command to cite within the presentation:\\~
 
-%------------------------------------------------
+% This statement requires citation \cite{p1}.
+% \end{frame}
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
+% %------------------------------------------------参考文献的写法
 
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{AndersonLocalization.png}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------参考文献的写法
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
+% \begin{frame}
+% \frametitle{References}
+% \footnotesize{
+% \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+% \bibitem[Smith, 2012]{p1} John Smith (2012)
+% \newblock Title of the publication
+% \newblock \emph{Journal Name} 12(3), 45 -- 678.
+% \end{thebibliography}
+% }
+% \end{frame}
 
 %------------------------------------------------结尾语
 
